@@ -60,10 +60,10 @@ function render( ) {
 	var time = Date.now() * 0.0001;
 
 // 	mesh.rotation.x += fade1 * 10;
-// 	mesh.rotation.y = fade1 * 5;
+	mesh.rotation.y = fade1 * 5;
 	
-// 	mesh.rotation.x += 0.01;
-	mesh.rotation.y = Math.sin( time * 1 ) * 1;
+	mesh.rotation.x += Math.sin( time * 1 ) * 1;
+// 	mesh.rotation.y = Math.sin( time * 1 ) * 1;
 
 	renderer.render( scene, camera );
 
