@@ -30,7 +30,7 @@ WebMidi.enable(function (err) {
       // Look at your midi device in the console and find the matching controller number. Plug it in below:
 
       //fade 1
-      if (e.controller.number === 6) {
+      if (e.controller.number === 1) {
         fade1 = e.value
         console.log("fade 1:", fade1)
       }
