@@ -13,11 +13,10 @@
 </head>
 <body>
 
-<script src="js/three.min.js"></script>
+<script src="js/three.minR88.js"></script>
 <!-- <script src="js/OrbitControls.js"></script> -->
-<script src="js/webmidi.js"></script>
-<script src="js/webmidi-three.js"></script>
-
+<script src="js/webmidi2r10/webmidi.js"></script>
+<script src="js/webmidiSetup.js"></script>
 
 <script>
 
@@ -25,7 +24,6 @@
 
 var camera, scene, renderer;
 var geometry, material, mesh;
-// var fade1;
 
 init();
 animate();
@@ -37,7 +35,7 @@ function init( ) {
 
 	scene = new THREE.Scene();
 
-	geometry = new THREE.BoxGeometry( 0.2, 0.2, 0.2 );
+	geometry = new THREE.BoxGeometry( 0.5, 0.5, 0.5 );
 	material = new THREE.MeshNormalMaterial();
 
 	mesh = new THREE.Mesh( geometry, material );
@@ -48,20 +46,24 @@ function init( ) {
 	document.body.appendChild( renderer.domElement );
 
 }
-	
+
 function animate( ) {
 
 	requestAnimationFrame( animate );
 	render( );
 }
-	
+
 function render( ) {
-	
+
 	var time = Date.now() * 0.0001;
 
-// 	mesh.rotation.x += fade1 * 2;
-	mesh.rotation.y = fade1 * 0.02;
-	
+	mesh.rotation.x = cc1 * 0.0009;
+
+if ( mesh ) {
+	mesh.rotation.y = cc1 * 0.005;
+}
+
+
 // 	mesh.rotation.x += Math.sin( time * 0.5 ) * 1;
 // 	mesh.rotation.y = Math.sin( time * 1 ) * 1;
 
