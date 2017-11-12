@@ -1,1 +1,1 @@
-# xMidix
+# xThreejsMidix
