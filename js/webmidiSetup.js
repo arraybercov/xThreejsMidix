@@ -3,29 +3,27 @@ var cc1, cc2, cc3, cc4,
     cc5, cc6, cc7, cc8 = undefined
 
 WebMidi.enable(function (err) {
-
   if (err) {
     console.log("WebMidi could not be enabled.", err);
   }
 
-  // Viewing available inputs and outputs
   console.log(WebMidi.inputs);
   console.log(WebMidi.outputs);
-
-  // Display the current time
   console.log(WebMidi.time);
 
-  // Store the controller as your input
-  input = WebMidi.getInputByName("IAC Driver Bus 1");
+  input = WebMidi.getInputByName("microKEY2");
 
-// Listen for a 'note on' message on all channels
+//   var inputs = midiAccess.inputs.values();
+// for ( var input = inputs.next(); input && !input.done; input = inputs.next()) {
+//   input.value.onmidimessage = MIDIMessageEventHandler;
+// }
+
 input.addListener('noteon', "all",
   function (e) {
     console.log("Received 'noteon' message (" + e.note.name + e.note.octave + ").");
   }
 );
 
-// Listen to control change message on all channels (CCs)
 input.addListener('controlchange', "all",
   function (e) {
     // console.log("Received 'controlchange' message.", e);
